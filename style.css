@@ -1,0 +1,14 @@
+body {
+  font-family: 'Fira Sans', sans-serif;
+  text-align: center;
+  background: #f0f0f0;
+}
+
+canvas {
+  border: 1px solid #ccc;
+  margin-top: 20px;
+}
+
+input {
+  margin: 5px;
+}

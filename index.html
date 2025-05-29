@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Angler Image Generator</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Fira Sans', sans-serif;
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      padding: 20px;
+    }
+    #controls {
+      width: 300px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    canvas {
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+  <div id="controls">
+    <h1>Angler Card Generator</h1>
+
+    <label>Date:</label>
+    <input type="text" id="dateInput" placeholder="June 10, 2025">
+    <label>Date Y Position:</label>
+    <input type="range" id="dateY" min="30" max="150" value="75">
+
+    <label>Angler Name:</label>
+    <input type="text" id="nameInput" placeholder="Angler Name">
+    <label>Angler Name Y Position:</label>
+    <input type="range" id="nameY" min="800" max="950" value="865">
+    <label>Angler Name X Position:</label>
+    <input type="range" id="nameX" min="0" max="1080" value="460">
+
+    <label><input type="checkbox" id="manualFont"> Use Manual Font Size</label>
+    <label>Font Size:</label>
+    <input type="range" id="fontSize" min="10" max="100" value="48">
+
+    <label>Choose File</label>
+    <input type="file" id="photoUpload" accept="image/*">
+
+    <label>Zoom:</label>
+    <input type="range" id="zoom" min="0.5" max="2" step="0.01" value="1">
+
+    <button id="generate">Generate Image</button>
+    <button id="download">Download JPG</button>
+  </div>
+
+  <canvas id="canvas" width="1080" height="1080"></canvas>
+
+  <script src="script.js"></script>
+</body>
+</html>
