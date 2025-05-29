@@ -66,13 +66,10 @@ document.getElementById('generate').addEventListener('click', () => {
 
 document.getElementById('download').addEventListener('click', function () {
   const dataURL = canvas.toDataURL('image/jpeg', 0.92);
-  const windowRef = window.open('', '_blank');
-  if (windowRef) {
-    windowRef.document.write('<img src="' + dataURL + '" style="max-width:100%;">');
-    windowRef.document.title = "Right-click to save the image";
-  } else {
-    alert("Popup blocked. Please allow popups or right-click to save the image.");
-  }
+  const link = document.createElement('a');
+  link.href = dataURL;
+  link.download = 'angler-birthday.jpg'; // ✅ This triggers direct .jpg download
+  link.click();
 });
 
 document.getElementById('zoom').addEventListener('input', function () {
